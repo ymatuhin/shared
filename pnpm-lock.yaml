@@ -1,0 +1,45 @@
+dependencies:
+  modern-normalize: 1.0.0
+  storage-available: 1.1.0
+devDependencies:
+  '@tsconfig/svelte': 1.0.10
+  '@types/node': 14.14.33
+  '@ymatuhin/debug': 0.0.10
+  svelte: 3.35.0
+lockfileVersion: 5.2
+packages:
+  /@tsconfig/svelte/1.0.10:
+    dev: true
+    resolution:
+      integrity: sha512-EBrpH2iXXfaf/9z81koiDYkp2mlwW2XzFcAqn6qh7VKyP8zBvHHAQzNhY+W9vH5arAjmGAm5g8ElWq6YmXm3ig==
+  /@types/node/14.14.33:
+    dev: true
+    resolution:
+      integrity: sha512-oJqcTrgPUF29oUP8AsUqbXGJNuPutsetaa9kTQAQce5Lx5dTYWV02ScBiT/k1BX/Z7pKeqedmvp39Wu4zR7N7g==
+  /@ymatuhin/debug/0.0.10:
+    dev: true
+    resolution:
+      integrity: sha512-U2Qc+KxaMnqGZ+Zbh6MGekKbcoXFCVoOVXDmucR24DsXJBcTW/dMdvr2UOkSF2cEsiVvsbeoH9szDj5qVryJyg==
+  /modern-normalize/1.0.0:
+    dev: false
+    engines:
+      node: '>=6'
+    resolution:
+      integrity: sha512-1lM+BMLGuDfsdwf3rsgBSrxJwAZHFIrQ8YR61xIqdHo0uNKI9M52wNpHSrliZATJp51On6JD0AfRxd4YGSU0lw==
+  /storage-available/1.1.0:
+    dev: false
+    resolution:
+      integrity: sha512-uFHjhmUxyxjEhoEl2sB+ogNWpPoFihk59cfSzPs0wXcCVRtpRti7u3G0O3VEyUuJJIg0oj0g7VGldsNSuhOoqQ==
+  /svelte/3.35.0:
+    dev: true
+    engines:
+      node: '>= 8'
+    resolution:
+      integrity: sha512-gknlZkR2sXheu/X+B7dDImwANVvK1R0QGQLd8CNIfxxGPeXBmePnxfzb6fWwTQRsYQG7lYkZXvpXJvxvpsoB7g==
+specifiers:
+  '@tsconfig/svelte': ^1.0.10
+  '@types/node': ^14.14.31
+  '@ymatuhin/debug': ^0.0.10
+  modern-normalize: ^1.0.0
+  storage-available: ^1.1.0
+  svelte: ^3.32.3
