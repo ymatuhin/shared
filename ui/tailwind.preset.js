@@ -25,10 +25,4 @@ module.exports = {
       },
     },
   },
-  variants: {
-    extend: {
-      translate: ["motion-reduce"],
-      textColor: ["visited"],
-    },
-  },
 };
