@@ -1,11 +1,22 @@
-import type { BaseLocale, Params, I18n, Data, Loadable, Translation, Loader } from "./types";
+import type {
+  BaseLocale,
+  Params,
+  Data,
+  Loadable,
+  Translation,
+  Loader,
+  I18n,
+  I18nStore,
+} from "./types";
 
 import { writable } from "svelte/store";
 
-export const createI18n = <Locale extends string = BaseLocale>(params: Params<Locale>) => {
+export const createI18n = <Locale extends string = BaseLocale>(
+  params: Params<Locale>,
+): I18n<Locale> => {
   const { locale, translation } = params;
 
-  const i18n = writable<I18n<Locale>>({ status: "initial", locale, translation });
+  const i18n = writable<I18nStore<Locale>>({ status: "initial", locale, translation });
   const data: Data<Locale> = {};
   const loadable: Loadable<Locale> = {};
 

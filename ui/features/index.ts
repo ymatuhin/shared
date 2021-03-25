@@ -9,13 +9,11 @@ export { default as Radio } from "./Radio.svelte";
 export { default as Field } from "./Field.svelte";
 export { default as Comments } from "./Comments.svelte";
 export { default as Spinner } from "./Spinner.svelte";
-export { default as Alert } from "./Alert.svelte";
-export { default as ErrorAlert } from "./ErrorAlert.svelte";
-export { default as ServerAlert } from "./ServerAlert.svelte";
+export { default as Alert } from "./alert/Alert.svelte";
+export { default as ErrorAlert } from "./alert/ErrorAlert.svelte";
+export { default as ServerAlert } from "./alert/ServerAlert.svelte";
 export { default as TextButton } from "./TextButton.svelte";
 export { default as Favicons } from "./Favicons.svelte";
 
-// export { Toastr } from "./toastr";
-
-// Binded
-export { DarkMode, darkMode, changeDarkMode } from "./darkMode";
+export * from "./alert";
+export * from "./darkMode";

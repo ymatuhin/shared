@@ -8,6 +8,7 @@ type Status = "initial" | "pending" | "success" | "error";
 type Error = {
   type: string;
   code?: number;
+  message?: string;
   data?: any;
 };
 type Store<Data> = {
@@ -48,7 +49,6 @@ function makeMethod(method: string, baseParams: BaseParams) {
     });
 
     async function request(data?: Object) {
-      console.info(`# [data]`, data);
       lastData = data;
       $store.update((state) => ({ ...state, status: "pending" }));
       const params = {
@@ -68,9 +68,11 @@ function makeMethod(method: string, baseParams: BaseParams) {
       if (response) [parseError, json] = await flatry(response.json());
 
       const isError = fetchError || parseError || !response?.ok;
+      const jsonMessage = json && typeof json === "object" ? json.message : "";
       const error = {
         type: fetchError ? "network" : "server",
         code: response?.status,
+        message: fetchError?.message || parseError?.message || jsonMessage,
         data: json,
       };
 
