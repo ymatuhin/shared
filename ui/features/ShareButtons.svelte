@@ -39,7 +39,7 @@
 <div class="inline-flex flex-wrap">
   {#each services as service}
     <a
-      class="w-8 h-8 p-1 box-content transform hover:scale-125"
+      class="w-8 h-8 p-1 box-content transform hover:scale-125 focus-outline"
       href={service.url}
       target="_blank"
       rel="noopener noreferrer"

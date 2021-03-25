@@ -7,7 +7,11 @@
   let svgClasses = "inline-block w-4 h-4 fill-current";
 </script>
 
-<button type="button" class="p-2 -m-2 box-content {className}" on:click={() => onChange(!active)}>
+<button
+  type="button"
+  class="p-2 -m-2 box-content focus-outline {className}"
+  on:click={() => onChange(!active)}
+>
   {#if active}
     <svg
       class={svgClasses}

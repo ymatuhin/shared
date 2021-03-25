@@ -1,5 +1,8 @@
 dependencies:
+  flatry: 1.0.12
+  lodash: 4.17.21
   modern-normalize: 1.0.0
+  raf-throttle: 2.0.5
   storage-available: 1.1.0
 devDependencies:
   '@tsconfig/svelte': 1.0.10
@@ -20,12 +23,30 @@ packages:
     dev: true
     resolution:
       integrity: sha512-U2Qc+KxaMnqGZ+Zbh6MGekKbcoXFCVoOVXDmucR24DsXJBcTW/dMdvr2UOkSF2cEsiVvsbeoH9szDj5qVryJyg==
+  /flatry/1.0.12:
+    dependencies:
+      is-promise: 2.2.2
+    dev: false
+    resolution:
+      integrity: sha1-Jg3AxBQlgF/phO1W3QS+7omieeI=
+  /is-promise/2.2.2:
+    dev: false
+    resolution:
+      integrity: sha512-+lP4/6lKUBfQjZ2pdxThZvLUAafmZb8OAxFb8XXtiQmS35INgr85hdOGoEs124ez1FCnZJt6jau/T+alh58QFQ==
+  /lodash/4.17.21:
+    dev: false
+    resolution:
+      integrity: sha512-v2kDEe57lecTulaDIuNTPy3Ry4gLGJ6Z1O3vE1krgXZNrsQ+LFTGHVxVjcXPs17LhbZVGedAJv8XZ1tvj5FvSg==
   /modern-normalize/1.0.0:
     dev: false
     engines:
       node: '>=6'
     resolution:
       integrity: sha512-1lM+BMLGuDfsdwf3rsgBSrxJwAZHFIrQ8YR61xIqdHo0uNKI9M52wNpHSrliZATJp51On6JD0AfRxd4YGSU0lw==
+  /raf-throttle/2.0.5:
+    dev: false
+    resolution:
+      integrity: sha512-0cRR3glc9bvdTW+mgw/DoSXkK7bnLZlWC+RtD3mubJhDSWKjPO5o2j/i7nOvIfmvAKgRtKPSwQcPI6MvYeDeYw==
   /storage-available/1.1.0:
     dev: false
     resolution:
@@ -40,6 +61,9 @@ specifiers:
   '@tsconfig/svelte': ^1.0.10
   '@types/node': ^14.14.31
   '@ymatuhin/debug': ^0.0.10
+  flatry: ^1.0.12
+  lodash: ^4.17.21
   modern-normalize: ^1.0.0
+  raf-throttle: ^2.0.5
   storage-available: ^1.1.0
   svelte: ^3.32.3

@@ -3,11 +3,9 @@ import { createLogger } from "@ymatuhin/debug";
 import { storeLense } from "../../../store-lense";
 
 const log = createLogger("🌙 dark-mode");
-
 const darkLense = storeLense("dark-mode");
-const defaultValue = getDefaultValue();
 
-export const darkMode = writable<boolean>(defaultValue);
+export const darkMode = writable<boolean>(getDefaultValue());
 log.store("active", darkMode);
 
 export const changeDarkMode = (newValue: boolean) => {

@@ -1,5 +1,5 @@
 <script lang="ts">
-  import DarkMode from "./DarkMode.atom.svelte";
+  import DarkMode from "./DarkMode.pure.svelte";
   import { darkMode, changeDarkMode } from "./darkMode.model";
 
   export let className: string = "";

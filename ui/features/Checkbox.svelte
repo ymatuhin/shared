@@ -1,6 +1,7 @@
 <script lang="ts">
   export let id: string = "";
   export let checked: boolean = false;
+  export let disabled: boolean = false;
 
   export let className: string = "";
   export { className as class };
@@ -11,12 +12,13 @@
   <div class="relative flex-shrink-0 w-5 h-5 mt-1 mr-4">
     <input
       {id}
+      {disabled}
       bind:checked
-      class="input absolute w-full h-full appearance-none border-2 border-gray-900 dark:border-gray-200"
+      class="input absolute w-full h-full appearance-none border-2 border-gray-900 dark:border-gray-200 focus-outline"
       type="checkbox"
     />
     <svg
-      class="w-full h-full fill-current color-red-text"
+      class="w-full h-full fill-current color-primary-text"
       xmlns="http://www.w3.org/2000/svg"
       viewBox="0 0 78 78"
       ><path

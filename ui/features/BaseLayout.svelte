@@ -3,7 +3,7 @@
 </div>
 <div class="flex justify-center m-4 sm:mx-6 2xl:mx-4">
   <div class="vertical-space / hidden 2xl:block flex-1"><slot name="left" /></div>
-  <div class="flex-1 max-w-2xl 2xl:mx-4 my-4">
+  <div class="flex-1 max-w-full lg:max-w-2xl 2xl:mx-8 my-4">
     <slot />
   </div>
   <div class="vertical-space / hidden 2xl:block flex-1"><slot name="right" /></div>
