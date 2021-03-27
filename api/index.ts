@@ -1,7 +1,10 @@
 import type { Writable } from "svelte/store";
 
-import flatry from "flatry";
 import { writable } from "svelte/store";
+import { createLogger } from "@ymatuhin/debug";
+import flatry from "flatry";
+
+const log = createLogger("📶 api");
 
 type BaseParams = { baseUrl: string; fetch?: RequestInit };
 type Status = "initial" | "pending" | "success" | "error";
@@ -48,7 +51,10 @@ function makeMethod(method: string, baseParams: BaseParams) {
       error: null,
     });
 
+    log.store(`${url} ${method.toLowerCase()}`, $store);
+
     async function request(data?: Object) {
+      log(`${url} ${method.toLowerCase()} 🌍`, data);
       lastData = data;
       $store.update((state) => ({ ...state, status: "pending" }));
       const params = {

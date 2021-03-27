@@ -21,7 +21,7 @@ export type Loadable<Locale extends string> = {
 };
 
 export type I18n<Locale> = {
-  addLocale: (locale: Locale, translation: Translation) => Translation;
-  addLoadable: (locale: Locale, cardinalLoader: Loader) => Loader;
+  addLocale: (locale: Locale, translation: Translation) => void;
+  addLoadable: (locale: Locale, cardinalLoader: Loader) => void;
   changeLocale: (locale: Locale) => Promise<void>;
 } & Writable<I18nStore<Locale>>;

@@ -7,7 +7,7 @@
   export let classTitle = "";
 </script>
 
-<div class="flex w-full overflow-hidden bg-white shadow-md dark:bg-gray-800 {$$props.class}">
+<div class="flex w-full overflow-hidden bg-white pane {$$props.class}">
   {#if $$slots.icon}
     <div class="flex items-center justify-center w-12 text-white {classIcon}">
       <slot name="icon" />

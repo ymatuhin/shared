@@ -1,4 +1,7 @@
 import storageAvailable from "storage-available";
+import { createLogger } from "@ymatuhin/debug";
+
+const log = createLogger("📦 store-lense");
 
 export const storeLense = (
   key: string,
@@ -11,11 +14,19 @@ export const storeLense = (
   if (!hasStorage) console.warn(`"${type}" doesn't work, safely fallback to object`);
 
   return {
-    remove: () => delete storage[key],
-    set: (value: any) => (storage[key] = JSON.stringify({ value })),
+    remove: () => {
+      log(`× ${key}`);
+      delete storage[key];
+    },
+    set: (value: any) => {
+      log(`▶️ ${key}`, value);
+      storage[key] = JSON.stringify({ value });
+    },
     get: () => {
       try {
-        return JSON.parse(storage[key] ?? "{}").value;
+        const value = JSON.parse(storage[key] ?? "{}").value;
+        log(`◀️ ${key}`, value);
+        return value;
       } catch (error) {
         throw new Error(`Can't parse value from "${type}.${key}".`);
       }

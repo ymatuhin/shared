@@ -101,6 +101,9 @@
   .typo-link {
     @apply hover:underline color-link color-link-visited;
   }
+  .pane {
+    @apply rounded shadow-lg bg-white dark:bg-gray-800;
+  }
 }
 
 @layer utilities {

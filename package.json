@@ -6,9 +6,10 @@
   "author": "ymatuhin",
   "license": "ISC",
   "devDependencies": {
-    "@ymatuhin/debug": "^0.0.10",
     "@tsconfig/svelte": "^1.0.10",
+    "@types/lodash": "^4.14.168",
     "@types/node": "^14.14.31",
+    "@ymatuhin/debug": "^0.0.10",
     "svelte": "^3.32.3"
   },
   "dependencies": {

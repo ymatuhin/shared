@@ -9,6 +9,7 @@ import type {
   I18nStore,
 } from "./types";
 
+import { log } from "./logger";
 import { writable } from "svelte/store";
 
 export const createI18n = <Locale extends string = BaseLocale>(
@@ -17,10 +18,14 @@ export const createI18n = <Locale extends string = BaseLocale>(
   const { locale, translation } = params;
 
   const i18n = writable<I18nStore<Locale>>({ status: "initial", locale, translation });
+  log.store("store", i18n);
   const data: Data<Locale> = {};
+  data[locale] = translation;
+
   const loadable: Loadable<Locale> = {};
 
   const changeLocale = async (locale: Locale) => {
+    log("changeLocale", locale);
     if (data[locale]) {
       const translation = data[locale];
       i18n.update((state) => ({ ...state, locale, translation }));
@@ -38,11 +43,14 @@ export const createI18n = <Locale extends string = BaseLocale>(
     }
   };
 
-  const addLocale = (locale: Locale, translation: Translation) => (data[locale] = translation);
-  const addLoadable = (locale: Locale, cardinalLoader: Loader) =>
-    (loadable[locale] = cardinalLoader);
-
-  addLocale(locale, translation);
+  const addLocale = (locale: Locale, translation: Translation) => {
+    log("addLocale", { locale, translation });
+    data[locale] = translation;
+  };
+  const addLoadable = (locale: Locale, cardinalLoader: Loader) => {
+    log("addLoadable", { locale, cardinalLoader });
+    loadable[locale] = cardinalLoader;
+  };
 
   return { ...i18n, addLocale, addLoadable, changeLocale };
 };
