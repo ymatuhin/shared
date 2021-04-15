@@ -15,7 +15,6 @@
   "dependencies": {
     "flatry": "^1.0.12",
     "lodash": "^4.17.21",
-    "modern-normalize": "^1.0.0",
     "raf-throttle": "^2.0.5",
     "storage-available": "^1.1.0"
   }

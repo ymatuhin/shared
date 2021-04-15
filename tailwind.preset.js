@@ -4,17 +4,8 @@ module.exports = {
   mode: "jit",
   darkMode: "class",
   purge: {
-    content: [
-      "./index.html",
-      "./src/**/*.{svelte,ts,js,html}",
-      "./node_modules/shared/**/*.{svelte,ts}",
-    ],
+    content: ["./**/*.{svelte,ts,js,html}"],
     mode: "all",
-    preserveHtmlElements: false,
-    options: {
-      variables: true,
-      keyframes: true,
-    },
   },
   theme: {
     fontFamily: {
@@ -43,5 +34,7 @@ module.exports = {
       },
     },
   },
-  // plugins: [require("@tailwindcss/forms")],
+  corePlugins: {
+    preflight: false,
+  },
 };
