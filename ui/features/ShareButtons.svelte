@@ -45,7 +45,7 @@
 <div class="inline-flex flex-wrap justify-center">
   {#each services as service}
     <a
-      class="filter grayscale flex w-6 h-6 p-[2px] mr-1 text-gray-100 transition transform rounded hover:scale-125 focus-outline"
+      class="filter grayscale hover:grayscale-0 focus:grayscale-0 flex w-6 h-6 p-[2px] mr-1 text-gray-100 transition transform rounded hover:scale-125 focus:scale-125 focus-outline"
       style="background: {service.color}"
       href={service.url}
       target="_blank"
