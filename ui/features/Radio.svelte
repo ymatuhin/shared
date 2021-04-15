@@ -10,26 +10,13 @@
 
 <!-- svelte-ignore a11y-label-has-associated-control -->
 <label class="inline-flex select-none {className}">
-  <div class="relative flex-shrink-0 w-5 h-5 mt-1 mr-4">
-    <input
-      {id}
-      {disabled}
-      {value}
-      bind:group
-      class="input absolute rounded-full w-full h-full appearance-none radius border-2 border-gray-900 dark:border-gray-200 focus-outline"
-      type="radio"
-    />
-    <div class="dot / w-2 h-2 rounded-full m-1.5 fill-current color-primary-bg" />
-  </div>
+  <input
+    {id}
+    {disabled}
+    {value}
+    bind:group
+    class="flex-shrink-0 mt-1 mr-3 bg-transparent border-gray-300 shadow-sm dark:border-gray-600 text-brand focus:border-brand focus-outline checked:border-0"
+    type="radio"
+  />
   <div><slot /></div>
 </label>
-
-<style>
-  .dot {
-    /* padding: 0.25rem; */
-    visibility: hidden;
-  }
-  .input:checked + .dot {
-    visibility: visible;
-  }
-</style>

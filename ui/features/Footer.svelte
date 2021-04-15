@@ -8,14 +8,20 @@
   const year = new Date().getFullYear();
 </script>
 
-<footer class="max-w-full text-sm / {className}">
+<footer class="mx-[7%] my-12 md:my-16 lg:mx-16 text-sm text-faint {className}">
   <p>
     {from} — {year} ©
-    <a href="/" class="typo-link">{title}</a>
+    <a href="/" class="text-pale hover:text-contrast focus:text-contrast">{title}</a>
     <span class="text-xs">(версия {version})</span>
   </p>
   <p>
-    Сделал с любовью <a href="https://ymatuhin.ru" class="typo-link">Юрий Матюхин</a>, эл. почта
-    <a href="mailto:ym@ymatuhin.ru?subject={location.hostname}" class="typo-link">ym@ymatuhin.ru</a>
+    Сделал с любовью <a
+      href="https://ymatuhin.ru"
+      class="text-pale hover:text-contrast focus:text-contrast">Юрий Матюхин</a
+    >, эл. почта
+    <a
+      href="mailto:ym@ymatuhin.ru?subject={location.hostname}"
+      class="text-pale hover:text-contrast focus:text-contrast">ym@ymatuhin.ru</a
+    >
   </p>
 </footer>

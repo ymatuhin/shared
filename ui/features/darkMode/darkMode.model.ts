@@ -1,6 +1,7 @@
 import { writable } from "svelte/store";
 import { createLogger } from "@ymatuhin/debug";
 import { storeLense } from "../../../store-lense";
+import { skipFirstCall } from "../../../utils";
 
 const log = createLogger("🌙 dark-mode");
 const darkLense = storeLense("dark-mode");
@@ -8,11 +9,7 @@ const darkLense = storeLense("dark-mode");
 export const darkMode = writable<boolean>(getDefaultValue());
 log.store("active", darkMode);
 
-export const changeDarkMode = (newValue: boolean) => {
-  darkMode.set(newValue);
-  darkLense.set(newValue);
-};
-
+darkMode.subscribe(skipFirstCall(darkLense.set));
 darkMode.subscribe((value) => {
   const method = value ? "add" : "remove";
   document.documentElement.classList[method]("dark");

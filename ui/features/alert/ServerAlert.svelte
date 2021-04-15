@@ -10,7 +10,7 @@
   const i18n = getContext<I18n<string>>("i18n");
   export let apiStore: ApiStore;
 
-  $: type = $apiStore.error?.type;
+  $: errType = $apiStore.error?.type;
 
   function getNotes({ error }) {
     let array = [];
@@ -26,12 +26,12 @@
 
 {#if $apiStore.status === "error"}
   <ErrorAlert
-    title={t($i18n, `serverError.${type}.title`)}
-    message={t($i18n, `serverError.${type}.message`)}
+    title={t($i18n, `serverError.${errType}.title`)}
+    message={t($i18n, `serverError.${errType}.message`)}
     notes={getNotes($apiStore)}
     {...$$restProps}
   >
-    <TextButton class="mt-1 " on:click={apiStore.retry}>
+    <TextButton class="mt-2 text-contrast" on:click={apiStore.retry}>
       {t($i18n, `serverError.retry`)}
     </TextButton>
   </ErrorAlert>

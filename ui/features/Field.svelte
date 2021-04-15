@@ -1,5 +1,6 @@
 <script lang="ts">
   export let value: string;
+  export let type: string = "text";
 
   const handleInput = (event) => {
     value = event.target.type === "checkbox" ? event.target.checked : event.target.value;
@@ -8,8 +9,9 @@
 
 <input
   {value}
+  {type}
   {...$$restProps}
   on:input={handleInput}
   on:change={handleInput}
-  class="{$$props.class} p-1 px-2 box-content h-5 appearance-none border-2 bg-transparent border-gray-900 dark:border-gray-200 focus-outline color-text"
+  class="{$$props.class} bg-transparent block w-full rounded-md border-gray-300 dark:border-gray-600 shadow-sm focus:border-brand focus-outline"
 />

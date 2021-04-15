@@ -1,27 +1,20 @@
-<div class="top-space / m-4 sm:mx-6 2xl:mx-4">
-  <slot name="top" />
-</div>
-<div class="flex justify-center m-4 sm:mx-6 2xl:mx-4">
-  <div class="vertical-space / hidden 2xl:block flex-1"><slot name="left" /></div>
-  <div class="flex-1 max-w-full lg:max-w-2xl 2xl:mx-8 my-4">
-    <slot />
+<div class="flex justify-center mx-[7%] my-12 md:my-16 lg:mx-16">
+  <div class="justify-end flex-1 hidden mr-4 vertical-space 2xl:flex">
+    <slot name="left" />
   </div>
-  <div class="vertical-space / hidden 2xl:block flex-1"><slot name="right" /></div>
+  <div class="w-full flex-shrink-0 max-w-full lg:max-w-3xl">
+    <div class="max-w-xl mx-auto">
+      <slot />
+    </div>
+  </div>
+  <div class="justify-start flex-1 hidden ml-4 vertical-space 2xl:flex">
+    <slot name="right" />
+  </div>
 </div>
 
 <style lang="postcss">
-  .top-space {
-    height: 50px;
-  }
-
-  @screen md {
-    .top-space {
-      height: 90px;
-    }
-  }
-
   .vertical-space {
     min-width: 200px;
-    max-width: 336px;
+    max-width: 340px;
   }
 </style>

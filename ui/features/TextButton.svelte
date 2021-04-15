@@ -2,6 +2,6 @@
   export let buttonType: "button" | "submit" = "button";
 </script>
 
-<button type={buttonType} on:click class="inline-flex font-medium text-sm {$$props.class}">
+<button type={buttonType} on:click class="inline-flex typo-button {$$props.class}">
   <slot />
 </button>

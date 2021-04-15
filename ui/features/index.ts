@@ -13,7 +13,9 @@ export { default as Alert } from "./alert/Alert.svelte";
 export { default as ErrorAlert } from "./alert/ErrorAlert.svelte";
 export { default as ServerAlert } from "./alert/ServerAlert.svelte";
 export { default as TextButton } from "./TextButton.svelte";
+export { default as TabButton } from "./TabButton.svelte";
 export { default as Favicons } from "./Favicons.svelte";
+export { default as Header } from "./Header.svelte";
 
 export * from "./alert";
 export * from "./darkMode";

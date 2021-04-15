@@ -9,32 +9,28 @@
 
 <!-- svelte-ignore a11y-label-has-associated-control -->
 <label class="inline-flex select-none {className}">
-  <div class="relative flex-shrink-0 w-5 h-5 mt-1 mr-4">
+  <div
+    class="relative text-brand flex w-5 h-5 mt-1 mr-3 focus-within-outline transition-colors rounded bg-white dark:bg-gray-800 border border-gray-300 dark:border-gray-600"
+  >
     <input
       {id}
       {disabled}
       bind:checked
-      class="input absolute w-full h-full appearance-none border-2 border-gray-900 dark:border-gray-200 focus-outline"
+      class="pointer-events-none absolute inset-0 opacity-0"
       type="checkbox"
     />
-    <svg
-      class="w-full h-full fill-current color-primary-text"
-      xmlns="http://www.w3.org/2000/svg"
-      viewBox="0 0 78 78"
-      ><path
-        d="M78.049 19.015L29.458 67.606a1.094 1.094 0 01-1.548 0L.32 40.015a1.094 1.094 0 010-1.547l6.704-6.704a1.095 1.095 0 011.548 0l20.113 20.112 41.113-41.113a1.095 1.095 0 011.548 0l6.703 6.704a1.094 1.094 0 010 1.548z"
-      /></svg
-    >
+    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+    </svg>
   </div>
   <div><slot /></div>
 </label>
 
 <style>
-  svg {
-    padding: 0.25rem;
+  input + svg {
     visibility: hidden;
   }
-  .input:checked + svg {
+  input:checked + svg {
     visibility: visible;
   }
 </style>
