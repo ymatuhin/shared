@@ -1,0 +1,16 @@
+{
+  "name": "utils",
+  "version": "1.0.0",
+  "description": "",
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "preact": "^10.7.3",
+    "raf-throttle": "^2.0.5",
+    "svelte": "^3.48.0"
+  },
+  "devDependencies": {
+    "@types/node": "^17.0.38"
+  }
+}

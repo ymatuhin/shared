@@ -1,0 +1,10 @@
+{
+  "name": "debug",
+  "version": "1.0.0",
+  "main": "index.ts",
+  "dependencies": {
+    "@types/debug": "^4.1.7",
+    "debug": "^4.3.4",
+    "is": "workspace:^1.0.0"
+  }
+}
