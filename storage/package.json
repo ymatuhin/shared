@@ -1,9 +1,0 @@
-{
-  "name": "storage",
-  "version": "1.0.0",
-  "main": "index.ts",
-  "dependencies": {
-    "storage-available": "^1.1.0",
-    "debug": "workspace:^1.0.0"
-  }
-}

@@ -1,5 +1,5 @@
-import { logger } from "debug";
 import storageAvailable from "storage-available";
+import { logger } from "../logger";
 
 const log = logger("📦 store-lense");
 

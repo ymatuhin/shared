@@ -1,5 +1,5 @@
 import debug from "debug";
-import { isDev } from "is/env";
+import { isDev } from "../is/env";
 
 if (isDev && !localStorage.debug) {
   localStorage.debug = "*";
