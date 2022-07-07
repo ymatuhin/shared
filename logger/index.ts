@@ -1,38 +1,8 @@
-import debug from "debug";
-import { isDev } from "../is/env";
+import { isProd } from "../is/env";
+import * as loggerModule from "./logger";
 
-if (isDev && !localStorage.debug) {
-  localStorage.debug = "*";
-}
+export const logger = isProd ? () => () => {} : loggerModule.logger;
+export const domain = isProd ? () => () => () => {} : loggerModule.domain;
 
-type Log = { (name: string, ...rest: any[]): void };
-export type Logger = (name: string) => Log;
-export type Domain = (name: string) => (name: string) => Log;
-
-export const logger: Logger = (name: string) => {
-  const log = debug(name);
-  const logger: Log = (message, ...args) => {
-    try {
-      log(`%c${message}`, "font-weight: bold", ...structuredClone(args));
-    } catch (e) {
-      log(`%c${message}`, "font-weight: bold", ...args);
-    }
-  };
-  return logger;
-};
-export const domain: Domain = (domain) => (name) => logger(`${domain} ${name}`);
-
-export const decorator =
-  (log: Log) =>
-  (_: any, propertyKey: string, descriptor: PropertyDescriptor) => {
-    const originalMethod = descriptor.value;
-
-    descriptor.value = function (...args: any[]) {
-      log(propertyKey, ...args);
-      const result = originalMethod.apply(this, args);
-      if (result !== undefined) log("✔️ " + propertyKey, result);
-      return result;
-    };
-
-    return descriptor;
-  };
+export * from "./decorator";
+export * from "./store";

@@ -5,14 +5,13 @@
   "author": "ymatuhin",
   "license": "ISC",
   "devDependencies": {
-    "@types/debug": "^4.1.7",
     "@types/node": "^14.14.31"
   },
   "dependencies": {
-    "debug": "^4.3.4",
     "flatry": "^1.0.12",
     "lodash": "^4.17.21",
     "raf-throttle": "^2.0.5",
-    "storage-available": "^1.1.0"
+    "storage-available": "^1.1.0",
+    "svelte": "^3.48.0"
   }
 }
