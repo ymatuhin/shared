@@ -1,4 +1,4 @@
-import { rafListen } from "./rafListen";
+import { rafListen } from "./raf-listen";
 
 const onResize = rafListen.bind(null, window, "resize");
 

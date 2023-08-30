@@ -12,7 +12,7 @@ export const logger = (name: string) => {
       `color: ${getColor(name)}`,
       `font-weight: bold; color: ${getColor(name + message)}`,
       `+${delta}ms`,
-      ...safeArgs,
+      ...safeArgs
     );
   };
 };

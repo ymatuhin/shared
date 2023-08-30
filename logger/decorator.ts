@@ -1,4 +1,6 @@
-type Log = { (name: string, ...rest: any[]): void };
+type Log = {
+  (name: string, ...rest: any[]): void;
+};
 
 export const decorator =
   (log: Log) =>

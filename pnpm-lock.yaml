@@ -1,52 +1,60 @@
-lockfileVersion: 5.4
+lockfileVersion: '6.0'
 
-specifiers:
-  '@types/node': ^14.14.31
-  flatry: ^1.0.12
-  lodash: ^4.17.21
-  raf-throttle: ^2.0.5
-  storage-available: ^1.1.0
-  svelte: ^3.48.0
+settings:
+  autoInstallPeers: true
+  excludeLinksFromLockfile: false
 
 dependencies:
-  flatry: 1.0.12
-  lodash: 4.17.21
-  raf-throttle: 2.0.5
-  storage-available: 1.1.0
-  svelte: 3.48.0
+  flatry:
+    specifier: ^1.0.12
+    version: 1.0.12
+  lodash:
+    specifier: ^4.17.21
+    version: 4.17.21
+  raf-throttle:
+    specifier: ^2.0.5
+    version: 2.0.5
+  storage-available:
+    specifier: ^1.1.0
+    version: 1.1.0
+  svelte:
+    specifier: ^3.48.0
+    version: 3.48.0
 
 devDependencies:
-  '@types/node': 14.14.33
+  '@types/node':
+    specifier: ^14.14.31
+    version: 14.14.33
 
 packages:
 
-  /@types/node/14.14.33:
+  /@types/node@14.14.33:
     resolution: {integrity: sha512-oJqcTrgPUF29oUP8AsUqbXGJNuPutsetaa9kTQAQce5Lx5dTYWV02ScBiT/k1BX/Z7pKeqedmvp39Wu4zR7N7g==}
     dev: true
 
-  /flatry/1.0.12:
+  /flatry@1.0.12:
     resolution: {integrity: sha1-Jg3AxBQlgF/phO1W3QS+7omieeI=}
     dependencies:
       is-promise: 2.2.2
     dev: false
 
-  /is-promise/2.2.2:
+  /is-promise@2.2.2:
     resolution: {integrity: sha512-+lP4/6lKUBfQjZ2pdxThZvLUAafmZb8OAxFb8XXtiQmS35INgr85hdOGoEs124ez1FCnZJt6jau/T+alh58QFQ==}
     dev: false
 
-  /lodash/4.17.21:
+  /lodash@4.17.21:
     resolution: {integrity: sha512-v2kDEe57lecTulaDIuNTPy3Ry4gLGJ6Z1O3vE1krgXZNrsQ+LFTGHVxVjcXPs17LhbZVGedAJv8XZ1tvj5FvSg==}
     dev: false
 
-  /raf-throttle/2.0.5:
+  /raf-throttle@2.0.5:
     resolution: {integrity: sha512-0cRR3glc9bvdTW+mgw/DoSXkK7bnLZlWC+RtD3mubJhDSWKjPO5o2j/i7nOvIfmvAKgRtKPSwQcPI6MvYeDeYw==}
     dev: false
 
-  /storage-available/1.1.0:
+  /storage-available@1.1.0:
     resolution: {integrity: sha512-uFHjhmUxyxjEhoEl2sB+ogNWpPoFihk59cfSzPs0wXcCVRtpRti7u3G0O3VEyUuJJIg0oj0g7VGldsNSuhOoqQ==}
     dev: false
 
-  /svelte/3.48.0:
+  /svelte@3.48.0:
     resolution: {integrity: sha512-fN2YRm/bGumvjUpu6yI3BpvZnpIm9I6A7HR4oUNYd7ggYyIwSA/BX7DJ+UXXffLp6XNcUijyLvttbPVCYa/3xQ==}
     engines: {node: '>= 8'}
     dev: false
