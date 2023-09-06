@@ -3,7 +3,7 @@ import rafThrottle from "raf-throttle";
 type RafListen = (
   node: Document | HTMLElement,
   eventName: string,
-  fn: Function
+  fn: (...args: any[]) => any
 ) => Function;
 
 const rafListen: RafListen = (

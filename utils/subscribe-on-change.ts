@@ -1,6 +1,7 @@
-import type { Readable, Subscriber } from "svelte/store";
-
-export function subscribeOnChange<T>(store: Readable<T>, fn: Subscriber<T>) {
+export function subscribeOnChange(
+  store: { subscribe: (value: any) => any },
+  fn: (value: any) => void
+) {
   let firedFirst = false;
   return store.subscribe((state) => {
     if (!firedFirst) firedFirst = true;

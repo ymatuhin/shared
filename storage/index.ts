@@ -2,7 +2,8 @@ import storageAvailable from "storage-available";
 
 type Params = {
   type?: "localStorage" | "sessionStorage";
-  logger?: Function;
+  debug?: Function;
+  version?: string | number;
 };
 
 /* EXAMPLE
@@ -12,9 +13,10 @@ type Params = {
  * nameStorage.remove();
  */
 
+export type Storage<T> = ReturnType<typeof createStorage<T>>;
 export function createStorage<T>(
   key: string,
-  { type = "localStorage", logger }: Params = {}
+  { type = "localStorage", debug, version = "" }: Params = {}
 ) {
   const hasStorage = storageAvailable(type);
   type IStorage = { [key: string]: string };
@@ -25,22 +27,26 @@ export function createStorage<T>(
   }
 
   return {
-    remove: () => {
-      logger?.(`× ${key}`);
-      delete storage[key];
+    has() {
+      return storage[key + version] !== undefined;
     },
-    set: (value: T) => {
-      logger?.(`▶️ ${key}`, value);
-      storage[key] = JSON.stringify([value]);
+    set(value: T) {
+      debug?.(`▶️ storage:${key}`, value);
+      storage[key + version] = JSON.stringify([value]);
+      return value;
     },
-    get: (): T => {
+    get(): T {
       try {
-        const value = JSON.parse(storage[key] ?? "[]")[0];
-        logger?.(`◀️ ${key}`, value);
+        const value = JSON.parse(storage[key + version] ?? "[]")[0];
+        debug?.(`◀️ storage:${key}`, value);
         return value;
       } catch (error) {
-        throw new Error(`Can't parse value from "${type}.${key}".`);
+        throw new Error(`Can't parse value from "${type}.${key}${version}"`);
       }
+    },
+    clear() {
+      debug?.(`× storage:${key}`);
+      delete storage[key + version];
     },
   };
 }
