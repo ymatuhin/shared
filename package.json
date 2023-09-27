@@ -1,6 +1,6 @@
 {
   "name": "shared",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "",
   "author": "ymatuhin",
   "license": "ISC",
@@ -11,8 +11,6 @@
     "flatry": "^1.0.14",
     "lodash": "^4.17.21",
     "raf-throttle": "^2.0.6",
-    "storage-available": "^1.1.0",
-    "svelte": "^4.2.0",
-    "valtio": "^1.11.2"
+    "storage-available": "^1.1.0"
   }
 }

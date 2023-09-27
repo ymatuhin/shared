@@ -1,4 +1,4 @@
-import type { createLogger } from "./logger";
+import { type createLogger } from "./logger";
 
 type Log = ReturnType<typeof createLogger>;
 
@@ -31,10 +31,21 @@ export const classLogger =
   };
 
 function monkeyPatch(log: Log, propertyKey: string, originalMethod: Function) {
+  const handleResult = (result: any) => {
+    if (result !== undefined) log(`✔︎ ${propertyKey}`, result);
+    console.groupEnd();
+  };
+
   return function (...args: any[]) {
     log(`◌ ${propertyKey}`, ...args);
+
     const result = originalMethod.apply(this, args);
-    if (result !== undefined) log(`✔︎ ${propertyKey}`, result);
+    if (result?.then) {
+      Promise.resolve(result).then(handleResult);
+    } else {
+      handleResult(result);
+    }
+
     return result;
   };
 }

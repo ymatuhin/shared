@@ -1,0 +1,76 @@
+%display {
+  font-family: var(--f-heading);
+}
+%d1 {
+  @extend %display;
+  font-size: 122px;
+  line-height: 1;
+}
+%d2 {
+  @extend %display;
+  font-size: 98px;
+  line-height: 1;
+}
+%d3 {
+  @extend %display;
+  font-size: 78px;
+  line-height: 1;
+}
+%d4 {
+  @extend %display;
+  font-size: 62px;
+  line-height: 1;
+  color: var(--c-text-light);
+}
+
+%heading {
+  font-family: var(--f-heading);
+}
+%heading-space {
+  margin-top: 2rem;
+  margin-bottom: 1rem;
+}
+%h1 {
+  @extend %heading;
+  font-size: 40px;
+  line-height: 1;
+}
+%h2 {
+  @extend %heading;
+  font-size: 35px;
+  line-height: 1;
+  font-weight: 600;
+}
+%h3 {
+  @extend %heading;
+  font-size: 30px;
+  line-height: 1;
+}
+%h4 {
+  @extend %heading;
+  font-size: 25px;
+  line-height: 1;
+}
+%h5 {
+  @extend %heading;
+  font-size: 24px;
+  line-height: 1;
+}
+
+%text {
+  font-style: normal;
+  font-weight: normal;
+  font-size: 1rem;
+}
+%text-lg {
+  @extend %text;
+  font-size: 24px;
+}
+%text-sm {
+  @extend %text;
+  font-size: 18px;
+}
+%text-xs {
+  @extend %text;
+  font-size: 16px;
+}
