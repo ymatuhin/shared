@@ -15,13 +15,17 @@
   --c-glass-dark: rgba(0, 0, 0, 0.1);
   --c-glass-darker: rgba(0, 0, 0, 0.2);
   --c-glass-darkest: rgba(0, 0, 0, 0.3);
-
-  --f-text: "Gill Sans, Gill Sans MT, Calibri, sans-serif";
-  --f-heading: var(--f-text);
 }
 
 $font-size: 20px;
 $line-height: 1.5;
 $container: 50rem; // 1000px
-$container-sm: 35rem; // 700px
-$container-lg: 65rem; // 1300px
+$container-sm: 36rem; // 720px
+$container-lg: 64rem; // 1280px
+
+$ff-text: Gill Sans, Gill Sans MT, Calibri, sans-serif;
+$ff-heading: $ff-text;
+$ff-display: $ff-text;
+
+$heading-size-scale: 1.2;
+$display-size-scale: 1.2;
